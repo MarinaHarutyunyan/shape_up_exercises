@@ -10,13 +10,10 @@ body {
     background-color: #f4f4f4;
 }
 
-.container {
-    width: 100%;
-    background-color: white;
-}
 
 a {
     font-weight: bold;
+    text-decoration: none;
 }
 
 header {
@@ -54,23 +51,22 @@ main {
     display: flex;
     flex-wrap: wrap; 
     padding: 20px 2%;
+    gap: 30px; 
 }
 
 
 section {
-    flex: 3;
+    flex: 2;
     min-width: 300px;
-    padding-right: 30px;
 }
 
 aside {
-    flex: 1;
+    flex: 1; 
     min-width: 250px;
     border: 2px solid steelblue;
     border-radius: 12px;
     padding: 15px; 
     align-self: flex-start;
-    margin-top: 1.5em;
 }
 
 main p {
@@ -79,7 +75,6 @@ main p {
 }
 
 main h2, main h3 {
-    margin-top: 1.5em; 
     margin-bottom: 0.5em;
 }
 
@@ -110,6 +105,10 @@ aside h2 {
     margin-top: 0;
 }
 
+aside h3 {
+    margin-top: 1em;
+}
+
 aside ul {
     line-height: 1.5; 
     list-style-type: square; 
@@ -131,4 +130,82 @@ footer {
     color: white; 
     padding: 20px 0; 
     margin-top: 20px;
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: steelblue;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li {
+    position: relative;
+    /* flex-grow: 1; */
+}
+
+nav a {
+    display: block; 
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 20px;
+    /* text-align: center; */
+}
+
+nav a.current {
+    border: 2px solid white;
+    border-radius: 8px;    
+    padding: 13px 18px; 
+    margin: 5px;
+}
+
+nav a:hover:not(.current) {
+    background-color: #3e83b8;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: steelblue;
+    min-width: 220px;
+    z-index: 1000;
+    flex-direction: column; 
+    flex-wrap: nowrap;
+}
+
+nav li:hover > ul {
+    display: block;
+}
+
+nav ul ul li {
+    width: 100%;
+}
+
+nav ul ul a {
+    margin: 0;
+    padding: 12px 15px;
+    border: none;
+}
+
+nav ul ul a:hover {
+    background-color: #5a9ac8;
+    text-decoration: underline;
+}
+
+nav li.has-submenu > a::after {
+    content: ' \25BC';
+    font-size: 0.8em;
+    margin-left: 6px;
+    position: relative;
+    top: -1px;
 }
