@@ -10,7 +10,6 @@ body {
     background-color: #f4f4f4;
 }
 
-
 a {
     font-weight: bold;
     text-decoration: none;
@@ -36,7 +35,6 @@ header .header-text {
     flex: 1;
 }
 
-
 header h1 {
     font-size: clamp(1.75rem, 4vw, 2.5rem); 
     color: steelblue; 
@@ -49,24 +47,23 @@ header h2 {
 
 main {
     display: flex;
-    flex-wrap: wrap; 
+    flex-direction: column;
     padding: 20px 2%;
     gap: 30px; 
 }
 
-
 section {
-    flex: 2;
     min-width: 300px;
+    order: 1; 
 }
 
 aside {
-    flex: 1; 
     min-width: 250px;
     border: 2px solid steelblue;
     border-radius: 12px;
     padding: 15px; 
     align-self: flex-start;
+    order: 2; 
 }
 
 main p {
@@ -136,19 +133,54 @@ nav {
     width: 100%;
 }
 
+.menu-checkbox {
+    display: none; 
+}
+
+#menu-toggle {
+    display: block; 
+    padding: 15px 20px;
+    background-color: steelblue;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 0; 
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+#menu-toggle::before {
+    content: "☰ Menu"; 
+    font-size: 1rem;
+}
+
+#menu-toggle-checkbox:checked + #menu-toggle {
+    font-size: 0; 
+}
+
+#menu-toggle-checkbox:checked + #menu-toggle::before {
+    content: "X"; 
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     background-color: steelblue;
-    
-    display: flex;
-    flex-wrap: wrap;
+    display: none; 
+    flex-direction: column; 
+    flex-wrap: nowrap;
+}
+
+#menu-toggle-checkbox:checked ~ #main-nav-list {
+    display: flex; 
 }
 
 nav li {
     position: relative;
-    /* flex-grow: 1; */
+    width: 100%;
+    border-bottom: 1px solid #3e83b8;
 }
 
 nav a {
@@ -157,12 +189,12 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     padding: 15px 20px;
-    /* text-align: center; */
+    text-align: left;
 }
 
 nav a.current {
     border: 2px solid white;
-    border-radius: 8px;    
+    border-radius: 8px;     
     padding: 13px 18px; 
     margin: 5px;
 }
@@ -173,12 +205,9 @@ nav a:hover:not(.current) {
 
 nav ul ul {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: steelblue;
-    min-width: 220px;
-    z-index: 1000;
+    position: static; 
+    background-color: #5a9ac8; 
+    min-width: unset;
     flex-direction: column; 
     flex-wrap: nowrap;
 }
@@ -189,16 +218,17 @@ nav li:hover > ul {
 
 nav ul ul li {
     width: 100%;
+    border-bottom: none;
 }
 
 nav ul ul a {
     margin: 0;
-    padding: 12px 15px;
+    padding: 12px 15px 12px 35px;
     border: none;
 }
 
 nav ul ul a:hover {
-    background-color: #5a9ac8;
+    background-color: #3e83b8;
     text-decoration: underline;
 }
 
@@ -208,4 +238,64 @@ nav li.has-submenu > a::after {
     margin-left: 6px;
     position: relative;
     top: -1px;
+    float: right; 
+}
+
+@media screen and (min-width: 800px) {
+
+    main {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+    }
+
+    section {
+        flex: 2; 
+        min-width: 300px;
+        order: 1; 
+    }
+
+    aside {
+        flex: 1; 
+        min-width: 250px;
+        order: 2; 
+        align-self: flex-start;
+    }
+    
+    #menu-toggle {
+        display: none;
+    }
+    
+    #menu-toggle::before {
+        content: none;
+    }
+    
+    .menu-checkbox {
+        display: none;
+    }
+
+    nav ul {
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap;
+    }
+    
+    nav li {
+        width: auto; 
+        border-bottom: none;
+        flex-shrink: 0; 
+    }
+    
+    nav ul ul {
+        position: absolute; 
+        min-width: 220px;
+        z-index: 1000;
+    }
+
+    nav li.has-submenu > a::after {
+        float: none;
+    }
+    
+    nav ul ul a {
+        padding: 12px 15px; 
+    }
 }
