@@ -1,20 +1,24 @@
+/* Reset and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
 }
 
+/* Body */
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%; 
     background-color: #f4f4f4;
 }
 
+/* Links */
 a {
     font-weight: bold;
     text-decoration: none;
 }
 
+/* Header */
 header {
     display: flex;
     align-items: center; 
@@ -45,6 +49,7 @@ header h2 {
     font-size: clamp(1rem, 2.5vw, 1.2rem); 
 }
 
+/* Main content */
 main {
     display: flex;
     flex-direction: column;
@@ -55,6 +60,13 @@ main {
 section {
     min-width: 300px;
     order: 1; 
+}
+
+section ul {
+    margin-left: 2em; 
+    margin-bottom: 20px;
+    line-height: 1.5; 
+    list-style-type: square;
 }
 
 aside {
@@ -97,6 +109,11 @@ section a:hover, section a:focus {
     color: steelblue; 
 }
 
+section h3{
+    color: maroon; 
+}
+
+/* Aside links and lists */
 aside h2 {
     color: maroon; 
     margin-top: 0;
@@ -108,8 +125,16 @@ aside h3 {
 
 aside ul {
     line-height: 1.5; 
-    list-style-type: square; 
-    padding-left: 40px; 
+    padding-left: 10px; 
+}
+
+aside ul.no-bullets {
+    list-style: none;
+    /* padding-left: 0; */
+}
+
+aside ul li {
+    line-height: 1.5;
 }
 
 aside a:link, aside a:visited {
@@ -120,6 +145,7 @@ aside a:hover, aside a:focus {
     color: maroon; 
 }
 
+/* Footer */
 footer {
     font-size: 90%; 
     text-align: center; 
@@ -129,6 +155,7 @@ footer {
     margin-top: 20px;
 }
 
+/* Navigation */
 nav {
     width: 100%;
 }
@@ -163,18 +190,19 @@ nav {
     content: "X"; 
 }
 
+/* Mobile nav list hidden by default */
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     background-color: steelblue;
-    display: none; 
-    flex-direction: column; 
-    flex-wrap: nowrap;
+    display: none; /* hidden by default on mobile */
+    flex-direction: column;
 }
 
+/* Show menu when checkbox checked */
 #menu-toggle-checkbox:checked ~ #main-nav-list {
-    display: flex; 
+    display: flex;
 }
 
 nav li {
@@ -203,13 +231,13 @@ nav a:hover:not(.current) {
     background-color: #3e83b8;
 }
 
+/* Submenus */
 nav ul ul {
     display: none;
     position: static; 
     background-color: #5a9ac8; 
     min-width: unset;
     flex-direction: column; 
-    flex-wrap: nowrap;
 }
 
 nav li:hover > ul {
@@ -241,6 +269,7 @@ nav li.has-submenu > a::after {
     float: right; 
 }
 
+/* Desktop styles */
 @media screen and (min-width: 800px) {
 
     main {
@@ -265,16 +294,12 @@ nav li.has-submenu > a::after {
         display: none;
     }
     
-    #menu-toggle::before {
-        content: none;
-    }
-    
     .menu-checkbox {
         display: none;
     }
 
     nav ul {
-        display: flex; 
+        display: flex; /* always visible on desktop */
         flex-direction: row; 
         flex-wrap: wrap;
     }
