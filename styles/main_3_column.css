@@ -137,12 +137,57 @@ aside ul li {
     line-height: 1.5;
 }
 
+aside ul li img {
+    width: 24px;   
+    height: 24px;  
+    vertical-align: middle; 
+    margin-right: 8px; 
+}
+
 aside a:link, aside a:visited {
     color: steelblue; 
 }
 
 aside a:hover, aside a:focus {
     color: maroon; 
+}
+
+figure.float-image {
+    float: left;
+    width: 35%; 
+    margin: 0 18px 18px 0;
+    text-align: left;
+    padding: 0;
+}
+
+figure.float-image img {
+    border: 1px solid #ccc; 
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+figure.float-image figcaption {
+    text-align: left; 
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 4px;
+    border-bottom: 2px solid steelblue; 
+    padding-bottom: 5px;
+    font-weight: bold; 
+}
+
+@font-face {
+    font-family: "American Captain";
+    src: url('../fonts/American Captain.ttf') format('truetype');
+}
+
+header .header-text h1,
+header .header-text h2 {
+    font-family: "American Captain", Arial, sans-serif;
+    font-style: normal;
 }
 
 /* Footer */

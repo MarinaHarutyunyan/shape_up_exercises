@@ -3,13 +3,111 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Shape Up! | Stress</title>
+	<title>Shape Up!</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+	<link rel="stylesheet" href="../styles/main_3_column.css">
 </head>
 
 <body>
-    <main>
-        <h1>Stress Relief</h1>
-        <h2>Under Construction</h2>
-	</main>
+	<div class="container">
+		<header>
+			<a href="../index.html">
+				<img src="../images/shape_up_logo.png" alt="Shape Up! logo">
+			</a>
+			<div class="header-text">
+				<h1>SHAPE UP!</h1>
+				<h2>Find the best fit for you</h2>
+			</div>
+		</header>
+
+		<nav>
+			<input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox">
+
+			<label for="menu-toggle-checkbox" id="menu-toggle" aria-expanded="false">
+			</label>
+
+			<ul id="main-nav-list">
+				<li><a href="../index_3_column.html">Home</a></li>
+				<li><a href="../strength/strength.html">Strength Training</a></li>
+				<li><a href="../cardio/cardio.html">Cardio Exercises</a></li>
+
+				<li class="has-submenu"><a href="#" class="current">Stress Relief</a>
+					<ul>
+						<li><a href="stress.html">What is Stress?</a></li>
+						<li><a href="tips.html">5 Helpful Tips</a></li>
+						<li><a href="#">Meditation</a></li>
+						<li><a href="#">Vipassana</a></li>
+					</ul>
+				</li>
+				<li class="has-submenu"><a href="#">Healthy Diets</a>
+					<ul>
+						<li><a href="#">Why a Healthy Diet?</a></li>
+						<li><a href="#">Plan Your Meals</a></li>
+						<li><a href="#">Count Your Calories</a></li>
+						<li><a href="#">Calculate Your BMI</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<main>
+			<section>
+				<h2>Stress Relief</h2>
+				<p>We all encounter stress at one time or another. So it's important to be able to recognize stress and
+					learn how to deal with it.</p>
+
+				<h3>What is stress?</h3>
+
+				<figure class="float-image">
+					<img src="../images/stress.jpg" alt="Stress ball exercise">
+					<figcaption>Stress can come from work, family, or health problems</figcaption>
+				</figure>
+
+				<p>Stress is the feeling that people have when they are overloaded and struggling to cope with demands.
+					Anything that poses a real or perceived challenge or threat to a person's well-being can cause
+					stress.</p>
+
+				<p>Stress can also be a motivator. It can be essential to survival. The "fight-or-flight"
+					mechanism helps us know when and how to respond to danger. But when this mechanism is triggered too
+					easily, or when there are too many stressors at one time, it can become harmful to a person's mental
+					and physical health.</p>
+
+				<h3>How to manage your stress</h3>
+				<p>To help manage stress, try the following:</p>
+				<ul>
+					<li>Take a break from what you're doing</li>
+					<li>Exercise on a regular basis</li>
+					<li>Take time to smile and laugh</li>
+					<li>Get support from family and friends</li>
+					<li>Meditate</li>
+				</ul>
+
+			</section>
+
+			<aside id="resources">
+				<h2>Additional resources</h2>
+				<ul class="no-bullets">
+					<li><img src="../images/run-icon.png" alt="Running icon"> <a
+							href="https://www.mayoclinic.org/healthy-lifestyle/fitness/basics/physical-activity/hlv-20049399"
+							target="_blank" rel="noopener noreferrer">Physical activity and health</a></li>
+					<li><img src="../images/stretch-icon.png" alt="Stretching icon"> <a
+							href="https://www.nerdfitness.com/blog/strength-training-101/" target="_blank"
+							rel="noopener noreferrer">Stretching exercises</a></li>
+					<li><img src="../images/strength-icon.png" alt="Weight icon"> <a
+							href="https://www.acefitness.org/education-and-resources/professional/expert-articles/6760/a-guide-to-strength-training-for-beginners/"
+							target="_blank" rel="noopener noreferrer">Strength training</a></li>
+					<li><img src="../images/cardio-icon.png" alt="Cardio icon"> <a
+							href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/cardio-workout"
+							target="_blank" rel="noopener noreferrer">Cardiovascular training</a></li>
+					<li><img src="../images/yoga-icon.png" alt="Yoga icon"> <a href="https://www.yogajournal.com/"
+							target="_blank" rel="noopener noreferrer">Yoga workout</a></li>
+				</ul>
+			</aside>
+		</main>
+
+		<footer>
+			<p>&copy; Shape Up!</p>
+		</footer>
+	</div>
 </body>
 </html>
