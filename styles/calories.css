@@ -1,0 +1,78 @@
+section h2 {
+    color: maroon; 
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.5em; 
+    margin-bottom: 10px;
+}
+
+
+.calorie-table {
+    width: 100%;
+    min-width: 500px; 
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    border: 2px solid black; 
+    background-color: #f4f4f4; 
+}
+
+.calorie-table th, .calorie-table td {
+    padding: 10px 15px; 
+    text-align: left;
+    background-color: #f4f4f4; 
+}
+
+.calorie-table thead th {
+    background-color: steelblue; 
+    color: white;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.calorie-table .category-cell {
+    font-weight: bold;
+    vertical-align: top; 
+}
+
+
+/* Small Screen Styles */
+@media screen and (max-width: 767px) {
+    
+    .calorie-table thead {
+        display: none;
+    }
+
+    .calorie-table tr {
+        display: block;
+        margin-bottom: 15px;
+        background-color: #f4f4f4;
+    }
+
+    .calorie-table td {
+        display: block;
+        text-align: left;
+        border: none;
+        padding: 5px 15px;
+        position: relative;
+        background-color: #f4f4f4; 
+    }
+    
+    .calorie-table tr .category-cell {
+        display: block;
+        background-color: steelblue; 
+        color: white;
+        text-align: left;
+        font-size: 1.2em;
+        padding: 10px 15px;
+        margin: 0;
+        font-weight: bold;
+        border: none;
+    }
+
+    .calorie-table .food {
+        font-weight: bold;
+        font-size: 1.1em;
+        padding-top: 10px;
+    }
+}
