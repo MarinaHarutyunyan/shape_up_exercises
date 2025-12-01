@@ -1,0 +1,18 @@
+video {
+    width: 90%;
+    display: block;
+    margin: .5em 0 1.5em 0; 
+}
+
+audio {
+    width: 90%; 
+    display: block;
+    box-shadow: lightgray;
+    border-radius: 10px;
+    margin: .5em 0 1.2em 0;
+}
+
+main h2 {
+    color: maroon; 
+    margin-top: 0;
+}

@@ -4,12 +4,82 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Shape Up! | Meditation</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/main_3_column.css">
+    <link rel="stylesheet" href="../styles/meditation.css"> 
 </head>
 
 <body>
-	<main>
-	    <h1>Meditation</h1>
-		<h2>Under Construction</h2>
-	</main>
+    <div class="container">
+        <header>
+            <img src="../images/shape_up_logo.png" alt="Shape Up! logo">
+            <div class="header-text">
+                <h1>Shape Up!</h1>
+                <h2>Find the best fit for you</h2>
+            </div>
+        </header>
+
+		   <nav>
+            <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox">
+            
+            <label for="menu-toggle-checkbox" id="menu-toggle" aria-expanded="false">
+            </label>
+            
+            <ul id="main-nav-list">
+				<li><a href="../index_3_column.html">Home</a></li>
+				<li><a href="../strength/strength.html">Strength Training</a></li>
+				<li><a href="../cardio/cardio.html">Cardio Exercises</a></li>
+
+				<li class="has-submenu"><a href="stress.html" class="current">Stress Relief</a>
+					<ul>
+						<li><a href="stress.html">What is Stress?</a></li>
+						<li><a href="tips.html">5 Helpful Tips</a></li>
+						<li><a href="#">Meditation</a></li>
+						<li><a href="#">Vipassana</a></li>
+					</ul>
+				</li>
+				<li class="has-submenu"><a href="../diet/calories.html">Healthy Diets</a>
+					<ul>
+						<li><a href="#">Why a Healthy Diet?</a></li>
+						<li><a href="../diet/meals.html">Plan Your Meals</a></li>
+						<li><a href="#">Count Your Calories</a></li>
+						<li><a href="#">Calculate Your BMI</a></li>
+					</ul>
+				</li>
+			</ul>
+        </nav>
+
+		<main>
+        <section>
+            <h1>What is Meditation?</h1>
+            <p>Meditation is one path toward transforming the mind. Buddhist meditation practices encourage and develop concentration, clarity, and emotional positivity. When you begin a meditation practice, you may learn the patterns and habits of your mind. Meditation offers you a way to cultivate new and more positive ways to approach the things you do throughout your day. Meditation can have a transformative effect and can lead to positive changes as well as a new understanding of life.</p>
+
+            <h2>Video of a woman meditating</h2>
+            <video src="../media/meditation.mp4" controls poster="../images/meditate.jpg"></video>
+            
+            <h2>Choose your meditation music</h2>
+            
+            <audio src="../media/ambient_grand_piano.mp3" controls></audio>
+            
+            <audio src="../media/body_and_soul.mp3" controls></audio>
+            
+            <audio src="../media/time_inevitability.mp3" controls></audio>
+            
+            <audio src="../media/waves_and_tears.mp3" controls></audio>
+            
+        </section>
+        
+        <aside>
+            <h2>Additional resources</h2>
+            <ul class="no-bullets">
+                <li><img src="../images/run-icon.png" alt="Running icon"> <a href="#">Physical activity and health</a></li>
+                <li><img src="../images/stretch-icon.png" alt="Stretching icon"> <a href="#">Stretching exercises</a></li>
+                <li><img src="../images/strength-icon.png" alt="Weight icon"> <a href="#">Strength training</a></li>
+                <li><img src="../images/cardio-icon.png" alt="Cardio icon"> <a href="#">Cardiovascular training</a></li>
+                <li><img src="../images/yoga-icon.png" alt="Yoga icon"> <a href="#">Yoga workout</a></li>
+            </ul>
+        </aside>
+
+    </main>
 </body>
 </html>
