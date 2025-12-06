@@ -1,27 +1,28 @@
-
+/* Reset and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
 }
 
+/* Body */
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%; 
     background-color: #f4f4f4;
 }
 
-.container {
-    width: 100%;
-    background-color: white;
-}
-
+/* Links */
 a {
     font-weight: bold;
+    text-decoration: none;
 }
 
+/* Header - GRID LAYOUT */
 header {
-    display: flex;
+    display: grid; 
+    grid-template-columns: minmax(100px, 120px) 1fr; 
+    grid-template-areas: "logo header-text"; 
     align-items: center; 
     padding: 20px;
     background-image: linear-gradient(to bottom, white, lightsteelblue); 
@@ -29,17 +30,16 @@ header {
 }
 
 header img {
-    width: 15%; 
     max-width: 120px; 
     min-width: 100px; 
     height: auto;
     margin-right: 30px; 
+    grid-area: logo; 
 }
 
 header .header-text {
-    flex: 1;
+    grid-area: header-text; 
 }
-
 
 header h1 {
     font-size: clamp(1.75rem, 4vw, 2.5rem); 
@@ -51,27 +51,45 @@ header h2 {
     font-size: clamp(1rem, 2.5vw, 1.2rem); 
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap; 
-    padding: 20px 2%;
+@font-face {
+    font-family: "American Captain";
+    src: url('../fonts/American Captain.ttf') format('truetype');
 }
 
+header .header-text h1,
+header .header-text h2 {
+    font-family: "American Captain", Arial, sans-serif;
+    font-style: normal;
+}
+
+/* Main content - GRID LAYOUT (Mobile) */
+main {
+    display: grid;
+    padding: 20px 2%;
+    gap: 30px; 
+    grid-template-areas: 
+        "section"
+        "aside"; 
+}
 
 section {
-    flex: 3;
     min-width: 300px;
-    padding-right: 30px;
+    grid-area: section; 
+}
+
+section ul {
+    margin-left: 2em; 
+    margin-bottom: 20px;
+    line-height: 1.5; 
+    list-style-type: square;
 }
 
 aside {
-    flex: 1;
     min-width: 250px;
     border: 2px solid steelblue;
     border-radius: 12px;
     padding: 15px; 
-    align-self: flex-start;
-    margin-top: 1.5em;
+    grid-area: aside; 
 }
 
 main p {
@@ -80,7 +98,6 @@ main p {
 }
 
 main h2, main h3 {
-    margin-top: 1.5em; 
     margin-bottom: 0.5em;
 }
 
@@ -106,15 +123,38 @@ section a:hover, section a:focus {
     color: steelblue; 
 }
 
+section h3{
+    color: maroon; 
+}
+
+/* Aside links and lists */
 aside h2 {
     color: maroon; 
     margin-top: 0;
 }
 
+aside h3 {
+    margin-top: 1em;
+}
+
 aside ul {
     line-height: 1.5; 
-    list-style-type: square; 
-    padding-left: 40px; 
+    padding-left: 10px; 
+}
+
+aside ul.no-bullets {
+    list-style: none;
+}
+
+aside ul li {
+    line-height: 1.5;
+}
+
+aside ul li img {
+    width: 24px; 
+    height: 24px; 
+    vertical-align: middle; 
+    margin-right: 8px; 
 }
 
 aside a:link, aside a:visited {
@@ -125,6 +165,34 @@ aside a:hover, aside a:focus {
     color: maroon; 
 }
 
+figure.float-image {
+    float: left;
+    width: 35%; 
+    margin: 0 18px 18px 0;
+    text-align: left;
+    padding: 0;
+}
+
+figure.float-image img {
+    border: 1px solid #ccc; 
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+figure.float-image figcaption {
+    text-align: left; 
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 4px;
+    border-bottom: 2px solid steelblue; 
+    padding-bottom: 5px;
+    font-weight: bold; 
+}
+
+/* Footer */
 footer {
     font-size: 90%; 
     text-align: center; 
@@ -132,4 +200,167 @@ footer {
     color: white; 
     padding: 20px 0; 
     margin-top: 20px;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+}
+
+.menu-checkbox {
+    display: none; 
+}
+
+#menu-toggle {
+    display: block; 
+    padding: 15px 20px;
+    background-color: steelblue;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 0; 
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+#menu-toggle::before {
+    content: "☰ Menu"; 
+    font-size: 1rem;
+}
+
+#menu-toggle-checkbox:checked + #menu-toggle {
+    font-size: 0; 
+}
+
+#menu-toggle-checkbox:checked + #menu-toggle::before {
+    content: "X"; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: steelblue;
+    display: none; 
+    flex-direction: column; 
+}
+
+/* Show menu when checkbox checked */
+#menu-toggle-checkbox:checked ~ #main-nav-list {
+    display: flex;
+}
+
+nav li {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #3e83b8;
+}
+
+nav a {
+    display: block; 
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 20px;
+    text-align: left;
+}
+
+nav a.current {
+    border: 2px solid white;
+    border-radius: 8px; 
+    padding: 13px 18px; 
+    margin: 5px;
+}
+
+nav a:hover:not(.current) {
+    background-color: #3e83b8;
+}
+
+nav ul ul {
+    display: none;
+    position: static; 
+    background-color: #5a9ac8; 
+    min-width: unset;
+    flex-direction: column; 
+}
+
+nav li:hover > ul {
+    display: block;
+}
+
+nav ul ul li {
+    width: 100%;
+    border-bottom: none;
+}
+
+nav ul ul a {
+    margin: 0;
+    padding: 12px 15px 12px 35px;
+    border: none;
+}
+
+nav ul ul a:hover {
+    background-color: #3e83b8;
+    text-decoration: underline;
+}
+
+nav li.has-submenu > a::after {
+    content: ' \25BC';
+    font-size: 0.8em;
+    margin-left: 6px;
+    position: relative;
+    top: -1px;
+    float: right; 
+}
+
+@media screen and (min-width: 800px) {
+
+    main {
+        grid-template-columns: 2fr 1fr; 
+        grid-template-areas: "section aside"; 
+    }
+
+    section {
+        grid-area: section; 
+    }
+
+    aside {
+        grid-area: aside; 
+        align-self: flex-start; 
+    }
+    
+    #menu-toggle {
+        display: none;
+    }
+    
+    .menu-checkbox {
+        display: none;
+    }
+
+    nav ul {
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap;
+    }
+    
+    nav li {
+        width: auto; 
+        border-bottom: none;
+        flex-shrink: 0; 
+    }
+    
+    nav ul ul {
+        position: absolute; 
+        min-width: 220px;
+        z-index: 1000;
+    }
+
+    nav li.has-submenu > a::after {
+        float: none;
+    }
+    
+    nav ul ul a {
+        padding: 12px 15px; 
+    }
 }
